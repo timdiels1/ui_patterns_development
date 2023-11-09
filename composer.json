@@ -6,6 +6,7 @@
     "homepage": "https://github.com/timdiels1/ui_patterns_development",
     "require": {
         "composer/installers": "^2.2",
+        "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.4.1",
         "drupal/core-composer-scaffold": "^10.1.6",
         "drupal/core-recommended": "^10.1.6",
@@ -49,7 +50,8 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "ergebnis/composer-normalize": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "cweagans/composer-patches": true
         },
         "sort-packages": true
     },
@@ -92,6 +94,11 @@
             "web/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
             ]
+        },
+        "patches": {
+            "drupal/core": {
+                "SDC - Remove final from Sdc Plugin Manager": "./patches/core/sdc/sdc-plugin-manager.patch"
+            }
         }
     }
 }

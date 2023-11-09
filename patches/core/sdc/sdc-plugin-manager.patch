@@ -1,0 +1,31 @@
+diff --git a/core/modules/sdc/src/ComponentPluginManager.php b/core/modules/sdc/src/ComponentPluginManager.php
+index 6a825febe0..1aaf4f84e8 100644
+--- a/core/modules/sdc/src/ComponentPluginManager.php
++++ b/core/modules/sdc/src/ComponentPluginManager.php
+@@ -31,7 +31,7 @@
+  *
+  * @internal
+  */
+-final class ComponentPluginManager extends DefaultPluginManager {
++class ComponentPluginManager extends DefaultPluginManager {
+
+   /**
+    * {@inheritdoc}
+@@ -224,7 +224,7 @@ protected function libraryFromDefinition(array $definition): array {
+   /**
+    * {@inheritdoc}
+    */
+-  protected function getDiscovery(): DirectoryWithMetadataPluginDiscovery {
++  protected function getDiscovery() {
+     if (!isset($this->discovery)) {
+       $directories = $this->getScanDirectories();
+       $this->discovery = new DirectoryWithMetadataPluginDiscovery($directories, 'sdc', $this->fileSystem);
+@@ -353,7 +353,7 @@ private function isValidDefinition(array $definition): bool {
+    * @return string[]
+    *   The directories.
+    */
+-  private function getScanDirectories(): array {
++  protected function getScanDirectories(): array {
+     $extension_directories = [
+       ...$this->moduleHandler->getModuleDirectories(),
+       ...$this->themeHandler->getThemeDirectories(),

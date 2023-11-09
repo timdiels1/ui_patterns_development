@@ -16,7 +16,7 @@
     "drupal/config_inspector": "^2.1",
     "drupal/core-composer-scaffold": "^10.1",
     "drupal/core-recommended": "^10.1",
-    "drush/drush": "^11.4"
+    "drush/drush": "^12.4"
   },
   "require-dev": {
     "behat/mink": "^1.10",

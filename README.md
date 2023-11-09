@@ -38,7 +38,7 @@ If using NFS to speed up the container, see these steps.
 
 ### Drush
 
-`drush 11` is installed by default and can be run with `ddev drush COMMAND`. You can use `ddev drush site:install` if you want to customize the install.
+`drush 12` is installed by default and can be run with `ddev drush COMMAND`. You can use `ddev drush site:install` if you want to customize the install.
 
 ### Composer
 

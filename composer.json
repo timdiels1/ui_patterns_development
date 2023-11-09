@@ -7,8 +7,8 @@
     "require": {
         "composer/installers": "^2.2",
         "drupal/admin_toolbar": "^3.4.1",
-        "drupal/core-composer-scaffold": "^10.1.4",
-        "drupal/core-recommended": "^10.1.4",
+        "drupal/core-composer-scaffold": "^10.1.6",
+        "drupal/core-recommended": "^10.1.6",
         "drush/drush": "^12.4.2"
     },
     "require-dev": {

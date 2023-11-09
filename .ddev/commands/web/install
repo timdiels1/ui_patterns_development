@@ -4,11 +4,19 @@
 ## Usage: install
 ## Example: "ddev install"
 
-drush site:install standard --account-name=admin --account-pass=admin --site-name="Drupal 10" -y
-drush en admin_toolbar admin_toolbar_tools config_inspector devel
+drush site:install standard --account-name=admin --account-pass=admin --site-name="UI Patterns 2.x" -y
+drush en admin_toolbar admin_toolbar_tools config_inspector
 
 # Install eslint dependencies
 yarn --cwd $DDEV_DOCROOT/core install
 # Configure prettier
 test -e .prettierrc.json || ln -s $DDEV_DOCROOT/core/.prettierrc.json .
 test -e .prettierignore || echo '*.yml' > .prettierignore
+
+# Install UI Patterns
+if [ ! -d "web/modules/contrib/ui_patterns" ]
+  then
+    echo "UI Patterns is not installed, please run 'ddev clone ui_patterns -b 2.0.x'"
+  else
+    drush en ui_patterns
+fi
